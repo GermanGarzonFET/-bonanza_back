@@ -1,5 +1,10 @@
 package com.bonanza.back.Model;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +16,20 @@ public class Rol {
     @Id
     private Long rolId;
     private String rolNombre;
+
+    @Column(name = "usuario_creacion", updatable = false)
+    @Getter
+    @Setter
+    @CreatedBy
+    private String usuarioCreacion;
+
+    /***
+     * Usuario que realizo la modificacion
+     */
+    @Column(name = "usuario_modificacion")
+    @Getter @Setter
+    @LastModifiedBy
+    private String usuarioModificacion;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "rol")
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();

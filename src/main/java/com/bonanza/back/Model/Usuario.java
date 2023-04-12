@@ -3,6 +3,10 @@ package com.bonanza.back.Model;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -33,6 +37,20 @@ public class Usuario implements UserDetails {
     private boolean enabled = true;
     private String perfil;
     private LocalDateTime fechaRegistro;
+
+    @Column(name = "usuario_creacion", updatable = false)
+    @Getter
+    @Setter
+    @CreatedBy
+    private String usuarioCreacion;
+
+    /***
+     * Usuario que realizo la modificacion
+     */
+    @Column(name = "usuario_modificacion")
+    @Getter @Setter
+    @LastModifiedBy
+    private String usuarioModificacion;
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "usuario")
     @JsonIgnore
