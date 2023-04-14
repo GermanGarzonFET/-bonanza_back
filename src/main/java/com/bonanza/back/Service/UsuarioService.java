@@ -3,6 +3,7 @@ package com.bonanza.back.Service;
 import com.bonanza.back.Model.Usuario;
 import com.bonanza.back.Model.UsuarioRol;
 
+import java.util.List;
 import java.util.Set;
 
 public interface UsuarioService {
@@ -19,7 +20,5 @@ public interface UsuarioService {
 
     Usuario obteneruser(Long userId);
 
-
-
-
+    public List<Usuario> findAll();
 }

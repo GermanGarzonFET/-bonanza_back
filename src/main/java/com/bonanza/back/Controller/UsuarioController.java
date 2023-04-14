@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -26,7 +27,7 @@ public class UsuarioController {
 
         Rol rol = new Rol();
         rol.setRolId(1L);
-        rol.setRolNombre("ADMIN");
+        rol.setRolNombre("NORMAL");
 
         UsuarioRol usuarioRol = new UsuarioRol();
         usuarioRol.setUsuario(usuario);
@@ -47,12 +48,9 @@ public class UsuarioController {
         usuarioService.eliminarUsuario(usuarioId);
     }
 
-
     @GetMapping("/listar")
-    public ResponseEntity<?> listarExamenes(){
-        return ResponseEntity.ok(usuarioService.obtenerUsuarios());
+    private ResponseEntity<List<Usuario>> getAllPersonas (){
+        return ResponseEntity.ok(usuarioService.findAll());
     }
-
-
 
 }
