@@ -1,5 +1,6 @@
 package com.bonanza.back.Service;
 
+import com.bonanza.back.Model.Proveedor;
 import com.bonanza.back.Model.Usuario;
 import com.bonanza.back.Model.UsuarioRol;
 
@@ -21,4 +22,5 @@ public interface UsuarioService {
     Usuario obteneruser(Long userId);
 
     public List<Usuario> findAll();
+
 }

@@ -1,5 +1,6 @@
 package com.bonanza.back.Controller;
 
+import com.bonanza.back.Model.Proveedor;
 import com.bonanza.back.Model.Rol;
 import com.bonanza.back.Model.Usuario;
 import com.bonanza.back.Model.UsuarioRol;
@@ -52,5 +53,7 @@ public class UsuarioController {
     private ResponseEntity<List<Usuario>> getAllPersonas (){
         return ResponseEntity.ok(usuarioService.findAll());
     }
+
+
 
 }

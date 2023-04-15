@@ -1,5 +1,6 @@
 package com.bonanza.back.Service.Implement;
 
+import com.bonanza.back.Model.Proveedor;
 import com.bonanza.back.Model.Usuario;
 import com.bonanza.back.Model.UsuarioRol;
 import com.bonanza.back.Repository.RolRepository;
@@ -23,9 +24,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private RolRepository rolRepository;
-
-    public UsuarioServiceImpl() {
-    }
 
     @Override
     public Usuario guardarUsuario(Usuario usuario, Set<UsuarioRol> usuarioRoles) throws Exception {
@@ -70,7 +68,6 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioRepository.findById(userId).get();
 
     }
-
 
     public List<Usuario> findAll() {
         return usuarioRepository.findAll();
