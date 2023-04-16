@@ -1,17 +1,12 @@
 package com.bonanza.back.Controller;
 
 import com.bonanza.back.Model.Proveedor;
-import com.bonanza.back.Model.Rol;
-import com.bonanza.back.Model.Usuario;
-import com.bonanza.back.Model.UsuarioRol;
 import com.bonanza.back.Service.ProveedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/proveedor")
