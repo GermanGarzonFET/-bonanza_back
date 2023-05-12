@@ -11,5 +11,6 @@ public interface ProveedorService {
     public List<Proveedor> findAll();
 
     public Proveedor guardarProveedor(Proveedor proveedor);
+    public Proveedor editarProveedor(Proveedor proveedor);
     public void eliminarProveedor(Long proveedorId);
 }

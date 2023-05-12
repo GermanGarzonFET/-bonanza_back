@@ -31,4 +31,10 @@ public class ProveedorController {
     public void eliminarProveedor(@PathVariable("proveedorId") Long proveedorId){
         proveedorService.eliminarProveedor(proveedorId);
     }
+
+    @PutMapping("/editar")
+    public Proveedor editarProveedor(@RequestBody Proveedor proveedor) throws Exception{
+
+        return proveedorService.editarProveedor(proveedor);
+    }
 }
