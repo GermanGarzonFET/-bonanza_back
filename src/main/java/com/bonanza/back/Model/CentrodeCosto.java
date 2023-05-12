@@ -13,7 +13,7 @@ public class CentrodeCosto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Integer codigo;
+    private String codigo;
     private String coordenadas;
     private String observacion;
     private String area;

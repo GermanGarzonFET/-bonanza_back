@@ -1,10 +1,7 @@
 package com.bonanza.back.Controller;
 
-import com.bonanza.back.DTO.TipoAlimentos;
 import com.bonanza.back.Model.CentrodeCosto;
-import com.bonanza.back.Model.Proveedor;
 import com.bonanza.back.Service.CentrodeCostoService;
-import com.bonanza.back.Service.Implement.CentrodeCostoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
