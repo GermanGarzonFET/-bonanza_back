@@ -27,6 +27,12 @@ public class ProveedorServiceImpl implements ProveedorService {
     }
 
     @Override
+    public Proveedor editarProveedor(Proveedor proveedor) {
+        return proveedorRepository.save(proveedor);
+
+    }
+
+    @Override
     public void eliminarProveedor(Long proveedorId) {
         proveedorRepository.deleteById(proveedorId);
     }
