@@ -20,6 +20,5 @@ public class Lote {
     private String densidad_siembra;
     private Integer numero_animales;
     private String centro_costo;
-    private String direccion;
 
 }
