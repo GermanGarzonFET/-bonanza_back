@@ -1,5 +1,6 @@
 package com.bonanza.back.Model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,10 +16,13 @@ public class Lote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String codigo;
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy", locale = "es-CO", timezone = "America/Bogota")
     private Date fecha_siembra;
     private String proveedor;
     private String densidad_siembra;
     private Integer numero_animales;
     private String centro_costo;
+    private String especie;
+    private String dias_cultivo;
 
 }
