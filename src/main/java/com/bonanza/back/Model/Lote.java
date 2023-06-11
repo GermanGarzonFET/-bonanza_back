@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -24,5 +25,20 @@ public class Lote {
     private String centro_costo;
     private String especie;
     private String dias_cultivo;
+
+    private LocalDateTime fechaRegistro;
+
+    public LocalDateTime getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    @PrePersist
+    public void asignarFechaRegistro() {
+        fechaRegistro = LocalDateTime.now();
+    }
 
 }

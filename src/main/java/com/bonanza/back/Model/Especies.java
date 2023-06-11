@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,4 +16,19 @@ public class Especies {
     private Long id;
 
     private String nombre;
+
+    private LocalDateTime fechaRegistro;
+
+    public LocalDateTime getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    @PrePersist
+    public void asignarFechaRegistro() {
+        fechaRegistro = LocalDateTime.now();
+    }
 }

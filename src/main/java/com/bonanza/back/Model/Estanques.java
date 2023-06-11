@@ -1,29 +1,32 @@
 package com.bonanza.back.Model;
+
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-@Entity
 @Getter
 @Setter
-@Table(name = "Inventario_Alimentos")
-public class InventarioAlimentos {
+@Entity
+@Table(name = "tipos_estanques")
+public class Estanques {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date fecha;
-    private String tipo_alimento;
-    private String proveedor;
-    private String registro_ica;
-    private String numero_factura;
-    private Integer numero_kilos;
-    private  Date fecha_vencimiento;
+    private String nombre_estanque;
+    private String uso;
+    private String consecutivo;
+    private String densidad_siembra;
+    private String medicion;
+    private String geolocation;
+    private String evidencia_fotografica;
+    private Integer id_usuario;
 
     private LocalDateTime fechaRegistro;
+
 
     public LocalDateTime getFechaRegistro() {
         return fechaRegistro;
@@ -37,4 +40,5 @@ public class InventarioAlimentos {
     public void asignarFechaRegistro() {
         fechaRegistro = LocalDateTime.now();
     }
+
 }
