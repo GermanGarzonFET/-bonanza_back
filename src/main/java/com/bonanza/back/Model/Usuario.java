@@ -36,7 +36,7 @@ public class Usuario implements UserDetails {
     private String telefono;
     private boolean enabled = true;
     private String perfil;
-    private LocalDateTime fechaRegistro;
+    private LocalDateTime fecha_registro;
 
     @Column(name = "usuario_creacion", updatable = false)
     @Getter
@@ -177,15 +177,15 @@ public class Usuario implements UserDetails {
     }
 
     public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
+        return fecha_registro;
     }
 
     public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+        this.fecha_registro = fechaRegistro;
     }
 
     @PrePersist
     public void asignarFechaRegistro() {
-        fechaRegistro = LocalDateTime.now();
+        fecha_registro = LocalDateTime.now();
     }
 }

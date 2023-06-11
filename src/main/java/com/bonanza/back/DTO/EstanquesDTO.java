@@ -14,7 +14,7 @@ public interface EstanquesDTO {
     String getEvidencia_fotografica();
     Integer getId_usuario();
     String getNombre();
-    Date getFechaRegistro();
+    Date getFecha_registro();
     String getApellido();
     String getEmail();
     String getPerfil();

@@ -15,20 +15,23 @@ public class Especies {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
+    private String nombre_especie;
 
-    private LocalDateTime fechaRegistro;
+    private LocalDateTime fecha_registro;
+
+
+    private Integer id_usuario;
 
     public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
+        return fecha_registro;
     }
 
     public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+        this.fecha_registro = fechaRegistro;
     }
 
     @PrePersist
     public void asignarFechaRegistro() {
-        fechaRegistro = LocalDateTime.now();
+        fecha_registro = LocalDateTime.now();
     }
 }

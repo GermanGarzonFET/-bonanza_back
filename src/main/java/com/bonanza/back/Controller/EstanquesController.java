@@ -31,9 +31,5 @@ public class EstanquesController {
         return estanquesService.guardarEstanques(estanques);
     }
 
-    @PostMapping
-    public ResponseEntity<?> crear(@RequestBody Estanques estanques){
-        return ResponseEntity.status(HttpStatus.CREATED).body(estanquesService.save(estanques));
-    }
 
 }

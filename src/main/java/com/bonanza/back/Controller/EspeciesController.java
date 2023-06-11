@@ -1,15 +1,14 @@
 package com.bonanza.back.Controller;
 
-import com.bonanza.back.Model.CentrodeCosto;
+import com.bonanza.back.DTO.EspeciesDTO;
+import com.bonanza.back.DTO.RequestEstanques;
 import com.bonanza.back.Model.Especies;
-import com.bonanza.back.Model.Usuario;
+import com.bonanza.back.Model.Estanques;
 import com.bonanza.back.Service.EspeciesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -19,13 +18,15 @@ public class EspeciesController {
 
     @Autowired
     EspeciesService especiesService;
-    @GetMapping("/listar")
-    private ResponseEntity<List<Especies>> getAllEspecies (){
-        return ResponseEntity.ok(especiesService.findAll());
+
+    @PostMapping("/listar")
+    private List<EspeciesDTO> listarEspecies (@Validated @RequestBody RequestEstanques request){
+        Integer usuario = request.getId_usuario();
+        return especiesService.listarEspecies(usuario);
     }
 
-    @GetMapping("/listarEspecies")
-    private ResponseEntity<List<Especies>> listarEspecies() {
-        return ResponseEntity.ok(especiesService.listarEspecies());
+    @PostMapping("/")
+    public Especies guardarEspecies(@Validated @RequestBody Especies especies) throws Exception{
+        return especiesService.guardarEspecies(especies);
     }
 }

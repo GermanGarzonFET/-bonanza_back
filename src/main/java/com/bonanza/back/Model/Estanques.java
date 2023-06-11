@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -24,21 +24,19 @@ public class Estanques {
     private String geolocation;
     private String evidencia_fotografica;
     private Integer id_usuario;
-
-    private LocalDateTime fechaRegistro;
-
+    private LocalDateTime fecha_registro;
 
     public LocalDateTime getFechaRegistro() {
-        return fechaRegistro;
+        return fecha_registro;
     }
 
     public void setFechaRegistro(LocalDateTime fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
+        this.fecha_registro = fechaRegistro;
     }
 
     @PrePersist
     public void asignarFechaRegistro() {
-        fechaRegistro = LocalDateTime.now();
+        fecha_registro = LocalDateTime.now();
     }
 
 }
